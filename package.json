@@ -1,7 +1,18 @@
 {
+  "name": "dnd-dice-bot",
+  "version": "1.0.0",
   "scripts": {
     "devStart": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "deployCommands": "node deploy-commands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryandougc/dnd-dice-bot.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryandougc/dnd-dice-bot/issues"
   },
   "dependencies": {
     "@discordjs/rest": "^1.1.0",
