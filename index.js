@@ -1,6 +1,6 @@
 import { config }                       from 'dotenv'
 import { Client, GatewayIntentBits }    from 'discord.js'
-import { rollDice }                     from './diceRoll.js'
+import { rollDice }                     from './diceLogic.js'
 
 // Initiate ENV Vars
 config()

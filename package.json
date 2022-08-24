@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/ryandougc/dnd-dice-bot.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ryandougc/dnd-dice-bot/issues"
   },
