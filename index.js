@@ -18,22 +18,28 @@ client.on('interactionCreate', async interaction => {
     const { commandName } = interaction
 
     if(commandName === 'roll') {
-        const numberOfDice = interaction.options._hoistedOptions[0].value
-        const numberOfDiceSides = interaction.options._hoistedOptions[1].value
+        try {
+            const numberOfDice = interaction.options._hoistedOptions[0].value
+            const numberOfDiceSides = interaction.options._hoistedOptions[1].value
+    
+            if(numberOfDice <= 0) {
+                return await interaction.reply('Number of dice must be 1 or higher')
+            }
+    
+            if(numberOfDiceSides <= 0) {
+                return await interaction.reply('Number of sides must be 1 or higher')
+            }
+    
+            const rolls = await rollDice(numberOfDice, numberOfDiceSides)
+    
+            const rollsString = await rolls.join(", ")
+    
+            await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}`)
+        } catch(err) {
+            console.log(err)
 
-        if(numberOfDice <= 0) {
-            return await interaction.reply('Number of dice must be 1 or higher')
+            await interaction.reply('Looks like you fucked something up, message Ryan so he can fix it.')
         }
-
-        if(numberOfDiceSides <= 0) {
-            return await interaction.reply('Number of sides must be 1 or higher')
-        }
-
-        const rolls = await rollDice(numberOfDice, numberOfDiceSides)
-
-        const rollsString = await rolls.join(", ")
-
-        await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}`)
     }
 })
 
