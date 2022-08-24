@@ -1,5 +1,6 @@
-import { config } from 'dotenv'
-import { Client, GatewayIntentBits } from 'discord.js'
+import { config }                       from 'dotenv'
+import { Client, GatewayIntentBits }    from 'discord.js'
+import { rollDice }                     from './diceRoll.js'
 
 // Initiate ENV Vars
 config()
@@ -44,15 +45,3 @@ client.on('interactionCreate', async interaction => {
 })
 
 client.login(TOKEN)
-
-function rollDice(numOfDice, numOfSides) {
-    const rolls = []
-
-    for(let i = 0; i < numOfDice; i++) {
-        const roll = Math.ceil(Math.random() * numOfSides)
-
-        rolls.push(roll)
-    }
-
-    return rolls
-}
