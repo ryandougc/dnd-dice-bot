@@ -39,6 +39,7 @@ client.on('interactionCreate', async interaction => {
     
             await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}\nTotal: ${sum}`)
         
+            
         } catch(err) {
             console.log(err)
 
