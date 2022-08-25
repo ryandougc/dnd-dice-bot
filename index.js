@@ -37,7 +37,7 @@ client.on('interactionCreate', async interaction => {
 
             const rollsString = await rolls.join(", ")
     
-            if(interaction.options_hoistedOptions[2] !== undefined){
+            if(interaction.options._hoistedOptions[2] !== undefined){
                 const modifier = interaction.options._hoistedOptions[2].value
                 const sumMod = sum + modifier
 
