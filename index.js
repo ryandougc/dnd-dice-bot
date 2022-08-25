@@ -22,7 +22,6 @@ client.on('interactionCreate', async interaction => {
         try {
             const numberOfDice = interaction.options._hoistedOptions[0].value
             const numberOfDiceSides = interaction.options._hoistedOptions[1].value
-            const modifier = interaction.options._hoistedOptions[2].value
  
             if(numberOfDice <= 0) {
                 return await interaction.reply('Number of dice must be 1 or higher')
@@ -38,7 +37,8 @@ client.on('interactionCreate', async interaction => {
 
             const rollsString = await rolls.join(", ")
     
-            if(modifier !== undefined){
+            if(interaction.options_hoistedOptions[2] !== undefined){
+                const modifier = interaction.options._hoistedOptions[2].value
                 const sumMod = sum + modifier
 
                 await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}\nTotal: ${sum}\nWith modifier (${modifier}): ${sumMod}`)
