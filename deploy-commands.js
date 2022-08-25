@@ -16,12 +16,17 @@ const commands = [
         .addIntegerOption(option => {
             return option.setName("numberofdice")
                 .setDescription("Number of dice to roll")
-                .setRequired(true)
+                .setRequired(false)
         })
         .addIntegerOption(option => {
             return option.setName("numberoffaces")
                 .setDescription("Number of faces the dice should have")
                 .setRequired(true)
+        })
+        .addIntegerOption(option => {
+            return option.setName("modifier")
+                .setDescription("Modifier the dice should have")
+                .setRequired(false)
         })
 ]
 .map(command => command.toJSON())
