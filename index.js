@@ -40,7 +40,12 @@ client.on('interactionCreate', async interaction => {
     
             const sumMod = sum + modifier
 
-            await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}\nTotal: ${sum}\nWith modifier (${modifier}): ${sumMod}`)
+            if(modifier !== undefined){
+                await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}\nTotal: ${sum}\nWith modifier (${modifier}): ${sumMod}`)
+            }
+            else{
+                await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}\nTotal: ${sum}`)
+            }
 
         } catch(err) {
             console.log(err)
