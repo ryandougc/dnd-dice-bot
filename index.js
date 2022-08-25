@@ -1,6 +1,6 @@
 import { config }                       from 'dotenv'
 import { Client, GatewayIntentBits }    from 'discord.js'
-import { rollDice }                     from './diceLogic.js'
+import { rollDice, sumDice }                     from './diceLogic.js'
 
 // Initiate ENV Vars
 config()
@@ -33,9 +33,13 @@ client.on('interactionCreate', async interaction => {
     
             const rolls = await rollDice(numberOfDice, numberOfDiceSides)
     
+            const sum = await sumDice(rolls)
+
             const rollsString = await rolls.join(", ")
     
-            await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}`)
+            await interaction.reply(`${numberOfDice} rolls of a ${numberOfDiceSides} sided die: \n${rollsString}\nTotal: ${sum}`)
+        
+
         } catch(err) {
             console.log(err)
 

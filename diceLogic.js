@@ -9,3 +9,13 @@ export function rollDice(numOfDice, numOfSides) {
 
     return rolls
 }
+
+export function sumDice(rolls) {
+    let sum = 0
+
+    rolls.forEach(roll => {
+        sum += roll
+    })
+
+    return sum
+}
