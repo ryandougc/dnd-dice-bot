@@ -16,7 +16,7 @@ const commands = [
         .addIntegerOption(option => {
             return option.setName("numberofdice")
                 .setDescription("Number of dice to roll")
-                .setRequired(false)
+                .setRequired(true)
         })
         .addIntegerOption(option => {
             return option.setName("numberoffaces")
