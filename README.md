@@ -52,34 +52,6 @@
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -101,31 +73,32 @@ A discord bot that lets you roll any amount of dice with any amount of sides. Op
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+You will need the following to start development on this bot:
+* Node.js
+* Npm
+* Discord Bot
+
+You can visit the <a href="https://discordjs.guide/#before-you-begin">Discord.js Documentation</a> for step-by-step instructions on how to get setup
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/ryandougc/dnd-dice-bot.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Duplicate the `sample.env` file and rename it to `.env`
+4. Enter your Discord bot token and client id into the `.env` file in the respective spots
+   ```txt
+   DISCORD_API_TOKEN=<place token here>
+   DISCORD_CLIENT_ID=<place client id here>
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -135,17 +108,18 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE -->
 ## Usage
 
+In the Discord server chat where your bot has been added, use the following command:
+
 /roll <number of dice> <number of faces> <!optional: modifier>
 
-  - **number of dice**
+  - **number of dice** -
     Enter in how many rolls of a die should happen
     
-  - **number of faces**
+  - **number of faces** -
     Enter the number of faces the die should have
     
-  - **modifier** - optional
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+  - **modifier** - (optional) 
+    Numbers to add to the sum of the roll. Can be positive or negative
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
