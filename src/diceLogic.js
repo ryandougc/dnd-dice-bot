@@ -1,4 +1,4 @@
-export function rollDice(numOfDice, numOfSides) {
+function rollDice(numOfDice, numOfSides) {
     const rolls = []
 
     for(let i = 0; i < numOfDice; i++) {
@@ -10,7 +10,7 @@ export function rollDice(numOfDice, numOfSides) {
     return rolls
 }
 
-export function sumDice(rolls) {
+function sumDice(rolls) {
     let sum = 0
 
     rolls.forEach(roll => {
@@ -18,4 +18,9 @@ export function sumDice(rolls) {
     })
 
     return sum
+}
+
+module.exports = {
+    rollDice,
+    sumDice
 }
