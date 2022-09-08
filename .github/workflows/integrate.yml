@@ -12,5 +12,8 @@ jobs:
       - uses: actions/setup-node@v3.4.1
         with: 
           node-version: 12
+          
       - run: npm ci
-      - run: npm run test
+
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.4
