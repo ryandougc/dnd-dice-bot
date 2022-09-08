@@ -1,6 +1,6 @@
-import { config } from 'dotenv'
-import { SlashCommandBuilder, Routes } from 'discord.js'
-import { REST } from '@discordjs/rest'
+const { config }                        = require('dotenv')
+const { SlashCommandBuilder, Routes }   = require('discord.js')
+const { REST }                          = require('@discordjs/rest')
 
 // Initiate ENV Vars
 config()
