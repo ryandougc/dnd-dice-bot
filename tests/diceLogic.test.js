@@ -10,7 +10,7 @@ describe('dice logic', () => {
 
             const array = await rollDice(numOfDice, numOfFaces)
 
-            expect(array).toEqual([10, 10, 10, 10, 10, 10, 10, 10, 10, 10])
+            expect(array).toEqual([10, 10, 1, 10, 10, 10, 10, 10, 10, 10])
 
             jest.spyOn(global.Math, 'random').mockRestore()
         })
